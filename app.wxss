@@ -1,0 +1,21 @@
+/**app.wxss**/
+page,body,html {
+  background: #f8f8f8;
+  color: #17242c;
+  font-size: 30rpx
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 60rpx 60rpx
+} 
+button {
+  font-size: 30rpx
+}
+button::after {
+  border: none
+}

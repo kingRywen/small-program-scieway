@@ -1,0 +1,23 @@
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.loading image {
+  margin-top: 30rpx;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  width: 36rpx;
+  height: 36rpx;
+  animation: rotate 0.8s infinite;
+
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}

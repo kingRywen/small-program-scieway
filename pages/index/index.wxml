@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<import src="/template/common/loading.wxml"/>
+<view class='wrapper'>
+  <swiper id='swiper' class='ani' style='transform:{{animationStyle.transform}};height: {{animationStyle.height}}px' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="tab_navs" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
+    <navigator class='tab_nav' wx:for="{{tabNavs}}" url='{{item.navUrl}}'>
+      <image src="{{item.img}}" />
+      <text>{{item.name}}</text>
+    </navigator>
+  </view>
+
+  <view class='main_wrapper'>
+    <view class='main_navs' id='tab' bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
+      <view class='main_nav {{currentIndex === index ? "active" : ""}}' data-index='{{index}}' wx:for-index="index" wx:for="{{mainNavs}}" bindtap='toggle'>
+        <image src='{{item.img}}'></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <scroll-view class='list_wrapper ani' style='height: {{animationStyle.scrollH}}px' scroll-y id='listWrapper' bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
+      <view class='article_lists' wx:if="{{load}}">
+        <view class='article_list' wx:for="{{articleLists}}">
+          <image src='{{item.img}}'></image>
+          <view class='text'>
+            <text class='title'>{{item.title}}</text>
+            <text class='subtitle'>{{item.subtitle}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view wx:else class='loading'>
+        <image src='/assets/fonts/loading.svg'></image>
+      </view> -->
+      <template wx:else is="getData"/>
+    </scroll-view>
+  </view>
+</view>

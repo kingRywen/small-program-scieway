@@ -1,0 +1,6 @@
+<template name="list1">
+  <text class='title'>{{title}}</text>
+  <view class='confLists'>
+    <view class='confList' wx:for="{{Lists}}">{{item.name}}</view>
+  </view>
+</template>

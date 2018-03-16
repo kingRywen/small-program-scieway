@@ -1,0 +1,37 @@
+@import '/styles/register.wxss';
+
+.h2 {
+  font-size: 52rpx;
+  margin-bottom: 40rpx
+}
+.container {
+  padding-top: 60rpx
+}
+
+ button {
+  width: 100%;
+  display: block;
+  padding: 14px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: #00a2ff;
+  box-shadow: 0 19px 38px rgba(30, 173, 255, 0.3); 
+  color: #fff;
+  /* border: 1px solid #f00; */
+  line-height: 1.2;
+  font-size: 30rpx;
+  margin-top: 80rpx;
+} 
+button.reverse {
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid #00a2ff;
+  color: #00a2ff
+}
+button::after {
+  border: none
+}
+button.btn:active {
+  background: #0790de;
+  color: #fff
+}

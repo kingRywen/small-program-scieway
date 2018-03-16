@@ -1,0 +1,19 @@
+@import '/styles/register.wxss';
+@import '/template/common/loading.wxss';
+@import '/template/common/list.wxss';
+
+.confList {
+  border-color: #f3f4f6
+}
+.btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 3.5;
+  border: 0;
+  border-radius: 0;
+  color: #fff
+}
+.add {
+  background: #148aea
+}

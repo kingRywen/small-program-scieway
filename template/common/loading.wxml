@@ -1,0 +1,5 @@
+<template name="getData">
+  <view class='loading'>
+    <image src='/assets/fonts/loading.svg'></image>
+  </view>
+</template>

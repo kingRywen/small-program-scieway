@@ -1,0 +1,30 @@
+.confLists {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 200rpx
+}
+
+.confList {
+  box-sizing: border-box;
+  background: #fff;
+  line-height: 3.2;
+  width: 100%;
+  border-top: 1px solid #f8f8f8;
+  font-size: 30rpx;
+  display: block;
+  padding: 0 30rpx;
+  font-weight: bold
+}
+
+.confList::last-child {
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.title {
+   margin: 40rpx 30rpx; 
+  display: block;
+  font-size: 26rpx;
+}

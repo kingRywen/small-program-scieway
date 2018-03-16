@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY st0 "fill:none;">
+	<!ENTITY st1 "fill:#DEF9FF;">
+	<!ENTITY st2 "fill:#FFF4E1;">
+	<!ENTITY st3 "fill:#FFE3E3;">
+	<!ENTITY st4 "fill:#C7EFC9;">
+	<!ENTITY st5 "fill:#3EB6FF;">
+	<!ENTITY st6 "fill:#FFBE5F;">
+	<!ENTITY st7 "fill:#DFF7E0;">
+	<!ENTITY st8 "fill:#FFFFFF;">
+	<!ENTITY st9 "fill:#67C167;">
+	<!ENTITY st10 "fill:#B63D00;">
+]>
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="193.49px" height="193.49px" viewBox="0 0 193.49 193.49" style="enable-background:new 0 0 193.49 193.49;"
+	 xml:space="preserve">
+<rect x="0.393" y="0.235" style="&st0;" width="193" height="193"/>
+<g>
+	<circle style="&st2;" cx="97.143" cy="96.485" r="86"/>
+	<g>
+		<path style="&st6;" d="M44.513,96.508c-3.026,1.629-3.112,4.445-0.193,6.258l21.447,13.316c2.919,1.813,7.648,1.737,10.508-0.167
+			l17.307-11.524c2.86-1.904,4.214-0.83,3.008,2.388l-6.453,17.223c-1.206,3.218,0.197,7.334,3.116,9.146l16.257,10.094
+			c2.919,1.813,5.906,0.548,6.636-2.809l19.002-87.338c0.731-3.358-1.147-4.772-4.173-3.143L44.513,96.508z"/>
+		<path style="&st6;" d="M75.11,127.975c-3.016-1.646-4.512-0.355-3.323,2.869l2.55,6.915c1.189,3.224,4.237,3.966,6.775,1.649
+			l0.978-0.893c2.537-2.317,2.145-5.56-0.871-7.206L75.11,127.975z"/>
+	</g>
+</g>
+</svg>
