@@ -1,0 +1,20 @@
+<import src="/template/common/tips.wxml"/>
+<import src="/template/common/loading.wxml"/>
+<template is="getData" wx:if="{{loading}}" />
+<view wx:else class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <text class='show_title'>请输入你的申请信息</text>
+    <view class='form_wrapper'>
+      <view class="section">
+        <input bindinput='checkName' value='{{trueName}}' name="trueName" placeholder="真实姓名" />
+      </view>
+      <view class="section">
+        <input bindinput='checkCompany' value='{{companyName}}' name="companyName" placeholder="公司名称" />
+      </view>
+    </view>
+    <button class='submit' formType="submit" disabled='{{disabled}}'>提交申请</button>
+  </form>
+
+  <template is="{{error? 'fail' : 'success'}}" data="{{info, isActive, link}}" />
+
+</view>

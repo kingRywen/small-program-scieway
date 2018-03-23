@@ -1,0 +1,30 @@
+<!--高德地图组件  -->
+<view class="map_container">
+  <view class='search_wrapper'>
+    <picker mode="region" bindchange="bindRegionChange" style='flex:none' bindtap='getMap' value="{{region}}">
+      <view>
+        <image class='icon_loca' src='/assets/fonts/location.svg'></image>
+        <text class='location'>{{ province || '正在定位中'}}</text>
+      </view>
+    </picker>
+    <input class='input' value='{{searchWord}}' bindinput='search' placeholder='输入你要查询的地点'></input>
+    <scroll-view class="searchResultWrapper  {{!showMap ? 'active' : ''}}" scroll-y>
+      <view class='pos_items' wx:for="{{searchResults}}" data-location='{{item.location}}' bindtap='bindSearch' wx:if="{{item.location}}" data-address='{{item.district + item.address}}' data-name='{{item.name}}'>
+        <view class='image'>
+          <image src='/assets/fonts/location_select.svg'></image>
+        </view>
+        <view class='item'>
+          <text class='name'>{{item.name}}</text>
+          <text class='district'>{{item.district}}   {{item.address}}</text>
+        </view>
+      </view>
+    </scroll-view>
+    <button class='cancel' bindtap='cancel'>取消</button>
+  </view>
+  <map class="map {{showMap ? 'active' : ''}}" markers='{{markers}}' longitude="{{longitude}}" latitude="{{latitude}}" scale="18" show-location="true" bindmarkertap="makertap" controls="{{controls}}" bindregionchange="mapRegionchange"></map>
+  <view class='info {{showInfo ? "active" : ""}}'>
+    <text class='title'>{{textData.name}}</text>
+    <text class='address'>{{textData.desc}}</text>
+    <button class='submit' bindtap='setDesc'>确认</button>
+  </view>
+</view>

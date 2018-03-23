@@ -1,0 +1,7 @@
+<template name="success">
+  <view class='fixed_wrapper {{isActive ? "active" : ""}}'>
+    <image src='/assets/fonts/success.svg'></image>
+    <text class='info'>{{info}}</text>
+    <navigator class='back' open-type='navigateBack' url='{{link}}'>返回</navigator>
+  </view>
+</template>

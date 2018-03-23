@@ -1,0 +1,6 @@
+@import '../../../styles/register.wxss';
+@import '../../../template/common/tips.wxss';
+@import '../../../template/common/loading.wxss';
+.container {
+  padding: 0;
+}

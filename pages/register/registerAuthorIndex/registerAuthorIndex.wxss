@@ -1,0 +1,34 @@
+page {
+  background: #1194df;
+}
+.container {
+  align-items: left;
+}
+.title {
+  color: #8fd6ff;
+  font-size: 36rpx;
+  font-weight: bold
+}
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #8fd6ff;
+  width: 100%;
+  outline: none;
+  color: #8fd6ff;
+  font-size: 40rpx;
+  padding: 10px 0;
+  margin: 200rpx 0 100rpx 0
+}
+.input-placeholder {
+    color: #8fd6ff;
+}
+
+button {
+  width: 100%;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  line-height: 3.6;
+  font-size: 26rpx
+}

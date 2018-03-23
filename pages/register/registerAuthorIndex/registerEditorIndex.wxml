@@ -1,0 +1,17 @@
+<import src="/template/common/loading.wxml" />
+<import src="/template/common/list.wxml" />
+
+<view wx:if="{{loading}}">
+  <view wx:if="{{isAuth && confLists.length}}">
+    <template is="list1" data="{{Lists: confLists, title: '你的会议列表'}}" />
+    <button class='btn add'>添加会议</button>
+  </view>
+  <view wx:elif="{{isAuth && !confLists.length}}" class='container'>
+    <text>还没有添加会议</text><button class='btn add' bindtap='addConference'>添加会议</button>
+  </view>
+  <view wx:else class='container'>
+    <text>没有会议权限</text>
+    <button class='btn add'>申请权限</button>
+  </view>
+</view>
+<template wx:else is="getData" />
