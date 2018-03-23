@@ -1,5 +1,0 @@
-<view class="container">
-  <text class='title'>该页提供手机号码的查询方式</text>
-  <input focus type='number' placeholder='Telephone'></input>
-  <button>查询</button>
-</view>

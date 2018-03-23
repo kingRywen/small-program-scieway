@@ -2,6 +2,15 @@
 import config from './utils/config.js'
 App({
   onLaunch: function () {
+    if (wx.getSystemInfoSync().SDKVersion < '1.7.0') {
+      wx.showModal({
+        title: '注意',
+        content: '你的微信SDK版本号太低，可能会影响正常使用，请升级你的微信版本后再试',
+        success: function(res) {
+          
+        }
+      })
+    }
     wx.showLoading({
       title: '登录中',
       mask:true
@@ -9,6 +18,7 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log('code: ', res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
           url: `${config.host}/api/Register?code=${res.code}`,
@@ -18,6 +28,7 @@ App({
             'content-type': 'application/json'
           },
           success: res => {
+            console.log(res.data)
             // 将后台的session存入storage备用
             wx.setStorageSync('sessionID', res.data)
             this.globalData.sessionID = res.data

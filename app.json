@@ -2,8 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/register/register",
-    "pages/register/registerAuthorIndex",
-    "pages/register/registerEditorIndex",
+    "pages/register/registerAuthorIndex/registerAuthorIndex",
+    "pages/register/registerEditorIndex/registerEditorIndex",
+    "pages/register/addConference/addConference",
+    "pages/register/openAuthority/openAuthority",
     "pages/logs/logs"
   ],
   "window":{

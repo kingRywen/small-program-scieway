@@ -1,5 +1,5 @@
 import config from './config.js'
-const formatTime = date => {
+const formatTime = (date, type) => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -7,7 +7,10 @@ const formatTime = date => {
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  if(type == 1) {
+    return [year, month, day].map(formatNumber).join('-')
+  }
+  return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
 const formatNumber = n => {
@@ -35,14 +38,14 @@ const domSelect = (id, cl) => {
   })
 }
 
-const request = (method, url, props, cb) => {
+const request = (method, url, props, cb, headers) => {
   wx.request({
     url: config.host + url,
     method: method,
     data: props,
-    header: {
+    header: Object.assign({
       'content-type': 'application/json'
-    },
+    }, headers),
     success: res => {
       cb(res)
     }

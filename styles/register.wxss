@@ -1,3 +1,67 @@
 page, body, html {
   background: #f3f4f6
 }
+
+form {
+  width: 100%;
+}
+input {
+  background: #fff;
+  padding:20rpx 80rpx 20rpx 30rpx;
+  word-break:keep-all;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+.section {
+  width: 100%; 
+  position: relative
+  
+}
+.section::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 1px;
+  left: 4%;
+  background: #ebeff1;
+  width: 92%;
+}
+.form_wrapper {
+  border-bottom: 1px solid #ebeff1;
+  border-top: 1px solid #ebeff1;
+}
+
+.section__title {
+  margin: 0;
+  color: #777;
+  font-size: 26rpx
+}
+.submit {
+  background: #148aea;
+  color: #fff;
+  margin-top: 60rpx;
+  margin: 30rpx
+}
+.show_title {
+  margin: 30rpx;
+  line-height: 4
+}
+button[disabled]:not([type]) {
+  color: #fff;
+  background: #148aea;
+  opacity: 0.43
+}
+button:active {
+  color: #52baf5;
+  background: #128bd0;
+}
+form .arrow_select image {
+  position:absolute;
+top:22rpx;
+right:10rpx;
+width:50rpx;
+height:50rpx;
+z-index:2;
+
+}

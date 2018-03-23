@@ -19,3 +19,11 @@ button {
 button::after {
   border: none
 }
+.fixed_wrapper {
+  position: fixed;
+  background: #fff;
+  z-index: 222;
+  height: 100%;
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+}

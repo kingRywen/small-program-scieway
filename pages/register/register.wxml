@@ -1,6 +1,6 @@
 <view class='container'>
   <text class='h2'>会议签到</text>
   <image src='/assets/fonts/home.svg'></image>
-  <button bindtap='navTo' class='btn' data-url='/pages/register/registerAuthorIndex'>我是作者</button>
-  <button bindtap='navTo' class='reverse' data-url='/pages/register/registerEditorIndex'>我是会议方</button>
+  <button bindtap='navTo' class='btn' data-url='/pages/register/registerAuthorIndex/registerAuthorIndex'>我是作者</button>
+  <button bindtap='navTo' class='reverse' data-url='/pages/register/registerEditorIndex/registerEditorIndex'>我是会议方</button>
 </view>

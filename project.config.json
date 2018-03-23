@@ -1,16 +1,16 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
-	"appid": "wxaa34140cb3f1e726",
-	"projectname": "small_public",
+	"libVersion": "1.9.1",
+	"appid": "wxc1337fc6ae63bab8",
+	"projectname": "small_global",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -21,17 +21,39 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
-					"name": "会议签到",
-					"pathName": "pages/register/registerEditorIndex",
+					"name": "会议方进入",
+					"pathName": "pages/register/registerEditorIndex/registerEditorIndex",
+					"query": "auth=123"
+				},
+				{
+					"id": 1,
+					"name": "作者进入",
+					"pathName": "pages/register/registerAuthorIndex/registerAuthorIndex",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加会议",
+					"pathName": "pages/register/addConference/addConference",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请权限",
+					"pathName": "pages/register/openAuthority/openAuthority",
 					"query": ""
 				}
 			]
