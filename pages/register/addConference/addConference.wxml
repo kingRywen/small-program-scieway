@@ -1,35 +1,39 @@
 <view class="container">
   <form bindsubmit="formSubmit" bindreset="formReset">
     <text class='show_title'>请填写会议信息</text>
-    <view class="section">
+    <view class='form_wrapper'>
+      <view class="section">
 
-      <input name="name" placeholder="会议简称" />
-    </view>
-    <view class="section arrow_select">
-      <input name="position" bindtap='getMap' disabled='true' value='{{regionStr}}' placeholder="会议地址" />
-      <image src='/assets/fonts/arrow_r.svg'></image>
-    </view>
-    <view class="section arrow_select">
-      <picker mode="date" start="{{now}}" bindtap='resetTime' data-changeValue='startTime' bindchange="bindTimeChange">
-        <view>
-          <input name="startTime" disabled='true' value='{{startTime}}' placeholder="会议开始时间" />
-        </view>
-      </picker>
-      <image src='/assets/fonts/arrow_r.svg'></image>
-    </view>
-    <view class="section arrow_select">
-      <picker mode="date" start="{{startTime}}" bindtap='resetTime' data-changeValue='endTime' bindchange="bindTimeChange">
-        <view>
-          <input name="endTime" disabled='true' value='{{endTime}}' placeholder="会议结束时间" />
-        </view>
-      </picker>
-      <image src='/assets/fonts/arrow_r.svg'></image>
-    </view>
-    <view class="section arrow_select">
+        <input name="name" placeholder="会议简称" />
+      </view>
+      <view class="section arrow_select">
+        <input name="position" bindtap='getMap' disabled='true' value='{{regionStr}}' placeholder="地址" />
+        <image src='/assets/fonts/arrow_r.svg'></image>
+      </view>
+      <view class="section arrow_select">
+        <picker mode="date" start="{{now}}" bindtap='resetTime' data-changeValue='startTime' bindchange="bindTimeChange">
+          <view>
+            <input name="startTime" disabled='true' value='{{startTime}}' placeholder="开始时间" />
+          </view>
+        </picker>
+        <image src='/assets/fonts/arrow_r.svg'></image>
+      </view>
+      <view class="section arrow_select">
+        <picker mode="date" start="{{startTime}}" bindtap='resetTime' data-changeValue='endTime' bindchange="bindTimeChange">
+          <view>
+            <input name="endTime" disabled='true' value='{{endTime}}' placeholder="结束时间" />
+          </view>
+        </picker>
+        <image src='/assets/fonts/arrow_r.svg'></image>
+      </view>
+      <view class="section arrow_select">
 
-      <input name="excel" placeholder="选择Excel" />
-      <image src='/assets/fonts/arrow_r.svg'></image>
+        <input disabled='true' bindtap='uploadExcel' name="excel" placeholder="选择Excel" />
+        <image src='/assets/fonts/arrow_r.svg'></image>
+      </view>
+      <input style='display:none' name="location" value='{{location}}'></input>
     </view>
+
     <button class='submit' formType="submit">提交</button>
   </form>
 </view>
@@ -37,4 +41,3 @@
 <view class='map-wrapper {{ mapOpened ? "active": ""}}'>
   <map-wrapper inner-text="Some text" bindcancel="closeMap" bindsetDesc="getaddress"></map-wrapper>
 </view>
-

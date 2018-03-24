@@ -1,6 +1,12 @@
 <template name="list1">
   <text class='title'>{{title}}</text>
   <view class='confLists'>
-    <view class='confList' wx:for="{{Lists}}">{{item.name}}</view>
+    <view class='confList' wx:for="{{Lists}}" data-name='{{item.name}}' data-id='{{item.id}}' bindtap='linkTo'>{{item.name}}</view>
+  </view>
+</template>
+<template name="list2">
+  <text class='title'>{{title}}</text>
+  <view class='confLists'>
+    <view class='confList' wx:for="{{Lists}}" data-url='{{item.link}}' bindtap='linkTo'>{{item.title}}</view>
   </view>
 </template>

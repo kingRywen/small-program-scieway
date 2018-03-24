@@ -14,6 +14,14 @@ Page({
     isAuth: false,
     confLists: []
   },
+
+  linkTo: function(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: `/pages/register/conferenceDetail/conferenceDetail?id=${e.currentTarget.dataset.id}&name=${e.currentTarget.dataset.name}`,
+    })
+
+  },
   /**
    * 添加会议
    */

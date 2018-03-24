@@ -9,9 +9,9 @@ input {
   background: #fff;
   padding:20rpx 80rpx 20rpx 30rpx;
   word-break:keep-all;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .section {
   width: 100%; 
@@ -26,7 +26,12 @@ text-overflow:ellipsis;
   left: 4%;
   background: #ebeff1;
   width: 92%;
+  bottom: 0
 }
+.section:nth-child(5):after {
+  display: none
+}
+
 .form_wrapper {
   border-bottom: 1px solid #ebeff1;
   border-top: 1px solid #ebeff1;

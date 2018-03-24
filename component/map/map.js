@@ -40,7 +40,8 @@ Component({
     // 确认地址
     setDesc: function () {
       var myEventDetail = {
-        desc: this.data.textData.desc
+        desc: this.data.textData.desc,
+        location: this.data.textData.location
       } // detail对象，提供给事件监听函数
       var myEventOption = {} // 触发事件的选项
       this.triggerEvent('setDesc', myEventDetail, myEventOption)
@@ -134,7 +135,8 @@ Component({
             markers: markersData,
             textData: {
               name: dataset.name,
-              desc: dataset.address
+              desc: dataset.address,
+              location: dataset.location
             }
           })
           console.log(this.data.textData)

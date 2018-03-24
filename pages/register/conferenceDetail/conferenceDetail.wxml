@@ -1,0 +1,8 @@
+<import src="/template/common/list.wxml" />
+<import src="/template/common/loading.wxml"/>
+
+<template is="getData" wx:if="{{loading}}" />
+<view wx:else>
+  <view></view>
+  <template is="list2" data="{{Lists: articleLists, title: confName + '的文章列表'}}" />
+</view>

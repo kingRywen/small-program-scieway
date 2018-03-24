@@ -1,4 +1,5 @@
 import { formatTime } from '../../../utils/util.js'
+import { request } from '../../../utils/util.js'
 
 let app = getApp()
 let markersData = [];
@@ -12,7 +13,8 @@ Page({
     endTime: '',
     now: formatTime(new Date(), 1),
     mapOpened: false,
-    regionStr: ''
+    regionStr: '',
+    location: ''
   },
 
   // 关闭地图
@@ -22,17 +24,36 @@ Page({
     })
   },
 
+  uploadExcel: function () {
+
+  },
+
   getaddress: function (e) {
     console.log(e)
     this.setData({
       regionStr: e.detail.desc,
-      mapOpened: false
+      location: e.detail.location,
+      mapOpened: false,
+
     })
     
   },
 
   formSubmit: function (e) {
+    for(var i in e.detail.value) {
+      if(e.detail.value[i] == '') {
+        wx.showToast({
+          title: '请填写完整信息',
+          mask:true,
+          icon: 'none'
+        })
+        return
+      }
+    }
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    request('POST', '/api/Register/ApplyConference', { ...e.detail.value }, (res)=> {
+      console.log(res)
+    })
   },
 
   getMap: function () {

@@ -4,6 +4,7 @@
     "pages/register/register",
     "pages/register/registerAuthorIndex/registerAuthorIndex",
     "pages/register/registerEditorIndex/registerEditorIndex",
+    "pages/register/conferenceDetail/conferenceDetail",
     "pages/register/addConference/addConference",
     "pages/register/openAuthority/openAuthority",
     "pages/logs/logs"
