@@ -28,3 +28,37 @@
   display: block;
   font-size: 26rpx;
 }
+.articleLists {
+  display: flex;
+  flex-direction: column;
+  background: #fff
+}
+.articleList {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 30rpx;
+}
+.articleList image {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle
+}
+.articleList .sub {
+  font-size: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold
+}
+.articleList .info, .articleList .address, .articleList .date {
+  margin-top: 24rpx
+}
+ .articleList .date image {
+   width: 32rpx;
+   height: 32rpx;
+   padding: 6rpx
+ }
+ .articleList .address image {
+   width: 40rpx;
+   height: 40rpx
+ }
