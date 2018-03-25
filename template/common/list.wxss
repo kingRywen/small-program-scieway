@@ -37,6 +37,18 @@
   display: flex;
   flex-direction: column;
   padding: 40rpx 30rpx;
+  position: relative
+}
+.articleList::after {
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 4%;
+  bottom: 0;
+  width: 92%;
+  height: 1px;
+  background: #f2f4f4
 }
 .articleList image {
   width: 36rpx;
@@ -50,8 +62,22 @@
   white-space: nowrap;
   font-weight: bold
 }
+.articleList .sub .id {
+  background: #148aea;
+  color: #fff;
+  padding: 0 10rpx;
+  border-radius: 50px;
+  font-size: 30rpx;
+  margin-right: 20rpx
+}
 .articleList .info, .articleList .address, .articleList .date {
   margin-top: 24rpx
+}
+.articleList .address, .articleList .date {
+  color: #777
+}
+.articleList .info .role {
+  color: #148aea
 }
  .articleList .date image {
    width: 32rpx;
