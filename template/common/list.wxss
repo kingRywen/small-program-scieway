@@ -39,6 +39,15 @@
   padding: 40rpx 30rpx;
   position: relative
 }
+.articleList:active {
+  background: #f2f4f4
+}
+.articleList .hide {
+  display: none
+}
+.articleList .hide.active {
+  display: block
+}
 .articleList::after {
   box-sizing: border-box;
   content: '';

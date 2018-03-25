@@ -3,5 +3,5 @@
 
 <template is="getData" wx:if="{{loading}}" />
 <view wx:else>
-  <template is="list2" data="{{Lists: articleLists, title: confName + '的文章列表'}}" />
+  <template is="list2" data="{{Lists: articleLists, title: confName + '的文章列表', indexNum}}" />
 </view>

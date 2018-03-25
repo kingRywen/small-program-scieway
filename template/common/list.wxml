@@ -8,11 +8,13 @@
   <block wx:if="{{Lists.length}}">
     <text class='title'>{{title}}</text>
     <view class='articleLists'>
-      <view class='articleList' wx:for="{{Lists}}" data-url='{{item.link}}' bindtap='linkTo'>
+      <view class='articleList' wx:for="{{Lists}}" wx:for-index="idx" data-index='{{idx}}' data-url='{{item.link}}' bindtap='tap'>
         <view class='sub'><text class='id'>{{item.id}}</text>{{item.title}}</view>
         <view class='info'><text class='role'>{{item.role}}</text> | <image src='/assets/fonts/peple.svg'></image>{{item.author}} |  <image src='/assets/fonts/phone.svg'></image>{{item.phone}}</view>
         <view class='address'> <image src='/assets/fonts/address.svg'></image>{{item.address}}</view>
         <view class='date'> <image src='/assets/fonts/date.svg'></image>{{item.date}}</view>
+
+        <view class='hide {{indexNum == idx ? "active" : "" }}'>123123</view>
       </view>
     </view>
   </block>

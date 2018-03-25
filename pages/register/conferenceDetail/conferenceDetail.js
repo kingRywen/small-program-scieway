@@ -8,7 +8,22 @@ Page({
   data: {
     confName: '',
     articleLists:[],
-    loading: true
+    loading: true,
+    indexNum: null
+  },
+
+  tap: function (e) {
+    console.log(e)
+    if (this.data.indexNum == e.currentTarget.dataset.index) {
+      this.setData({
+        indexNum: null
+      })
+    } else {
+      this.setData({
+        indexNum: e.currentTarget.dataset.index
+      })
+    }
+    
   },
 
   /**
