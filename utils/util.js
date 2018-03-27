@@ -7,10 +7,19 @@ const formatTime = (date, type) => {
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  if(type == 1) {
+  if (type == 1) {
     return [year, month, day].map(formatNumber).join('-')
   }
   return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+
+const formatDate = (time) => {
+  if (!time) {
+    return new Date(null)
+  }
+  time = time.replace(/-/g, ':').replace(' ', ':')
+  time = time.split(':')
+  return new Date(time[0], (time[1] - 1), time[2], time[3], time[4], time[5])
 }
 
 const formatNumber = n => {
@@ -57,5 +66,6 @@ module.exports = {
   formatTime: formatTime,
   debounce: debounce,
   domSelect: domSelect,
-  request: request
+  request: request,
+  formatDate
 }

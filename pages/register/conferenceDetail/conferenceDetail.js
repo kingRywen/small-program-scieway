@@ -1,5 +1,6 @@
 import {
-  request
+  request,
+  formatDate
 } from '../../../utils/util.js'
 
 let lists = {}
@@ -134,7 +135,7 @@ Page({
     }
     switch (Number(sortNum)) {
       case 0:
-        current = current.sort((a, b) => (new Date(a.date).valueOf() - new Date(b.date).valueOf()))
+        current = current.sort((a, b) => (formatDate(a.date).valueOf() - formatDate(b.date).valueOf()))
         break;
       case 1:
         current = current.sort((a, b) => (a.id - b.id))
@@ -181,7 +182,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    for (var i in lists) {
+      // console.log(i);
+      lists[i] = null
+    }
+    lists = {}
+    console.log(options, formatDate("2017-04-24 06:15:26").valueOf())
     this.setData({
       confName: options.name
     })
@@ -221,14 +227,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
