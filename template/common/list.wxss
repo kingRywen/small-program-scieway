@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 200rpx
+  margin-bottom: 200rpx;
 }
 
 .confList {
@@ -16,7 +16,7 @@
   font-size: 30rpx;
   display: block;
   padding: 0 30rpx;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .confList::last-child {
@@ -24,76 +24,189 @@
 }
 
 .title {
-   margin: 40rpx 30rpx; 
+  margin: 40rpx 30rpx;
   display: block;
   font-size: 26rpx;
 }
+
 .articleLists {
   display: flex;
   flex-direction: column;
-  background: #fff
+  background: #fff;
 }
+
 .articleList {
   display: flex;
   flex-direction: column;
   padding: 40rpx 30rpx;
-  position: relative
+  position: relative;
 }
+
 .articleList:active {
-  background: #f2f4f4
+  background: #f2f4f4;
 }
+
 .articleList .hide {
-  display: none
+  transform: translate3d(0,0,0);
+  display: block;
+  transition: all 0.25s ease-in-out;
+  height: 0
 }
+.articleList .hide .address {
+  transform: translate3d(0,0,0);
+  display: block;
+  opacity: 0;
+  height: 0;
+  /* transition: all 0.25s ease-in-out; */
+}
+
 .articleList .hide.active {
-  display: block
+  height: auto;
+  transition: all 0.25s ease-in-out;
 }
+.articleList .hide.active .address {
+  display: block;
+  opacity: 1;
+  height: auto;
+  transition: all 0.25s ease-in-out;
+}
+
 .articleList::after {
   box-sizing: border-box;
   content: '';
   display: block;
   position: absolute;
-  left: 4%;
+  left: 0;
   bottom: 0;
-  width: 92%;
+  width: 100%;
   height: 1px;
-  background: #f2f4f4
+  background: #f2f4f4;
 }
+
 .articleList image {
   width: 36rpx;
   height: 36rpx;
-  vertical-align: middle
+  vertical-align: middle;
+  margin-right: 10rpx
 }
+
 .articleList .sub {
   font-size: 34rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-weight: bold
+  font-weight: bold;
 }
+.articleList .sub .text {
+  vertical-align: -1px
+}
+
 .articleList .sub .id {
   background: #148aea;
   color: #fff;
-  padding: 0 10rpx;
+  padding: 0 18rpx;
   border-radius: 50px;
-  font-size: 30rpx;
-  margin-right: 20rpx
+  font-size: 28rpx;
+  margin-right: 20rpx;
+  font-weight: normal;
+  vertical-align: middle
+  
 }
-.articleList .info, .articleList .address, .articleList .date {
-  margin-top: 24rpx
+.articleList .sub .id.active {
+  background: #a8a8a8
 }
+
+.articleList .info, .articleList .address, .articleList .mark, .articleList .date,.articleList .notRegitser {
+  margin-top: 18rpx;
+}
+.articleList .mark {
+  border-top: 1px solid #f2f4f4;
+  padding-top: 18rpx
+}
+
 .articleList .address, .articleList .date {
-  color: #777
+  color: #777;
+}
+.articleList .date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  /* margin-bottom: 18rpx */
+}
+
+.articleList .date .sure {
+  background:#148aea;
+  color:#fff;
+  margin:0;
+  line-height: 2;
+  font-size: 26rpx
+
+}
+.articleList .address {
+  font-size: 26rpx
 }
 .articleList .info .role {
-  color: #148aea
+  color: #148aea;
 }
- .articleList .date image {
-   width: 32rpx;
-   height: 32rpx;
-   padding: 6rpx
- }
- .articleList .address image {
-   width: 40rpx;
-   height: 40rpx
- }
+
+.articleList .date image {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: -2px;
+  margin-right: 6rpx
+}
+
+.articleList .address image {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: -4px;
+  margin-right: 10rpx
+}
+
+.none {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.none image {
+  width: 300rpx;
+}
+
+.none text {
+  color: #777;
+}
+.articleList .notRegitser {
+  color: #ff5722
+}
+.articleList .mark image {
+  width: 36rpx;
+  height: 36rpx
+}
+
+.selectLists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.selectLists .selectList {
+  flex: auto;
+  box-sizing: border-box;
+  padding: 30rpx;
+  display: flex;
+  font-size: 24rpx;
+  justify-content: space-between
+}
+.selectLists .selectList:first-child {
+  border-right: 1px solid #f0f0f0;
+}
+.selectLists .selectList image {
+  width: 32rpx;
+  height: 32rpx;
+
+}

@@ -6,15 +6,56 @@
 </template>
 <template name="list2">
   <block wx:if="{{Lists.length}}">
+    <view class='selectLists'>
+      <view class='selectList' bindtap='showSheet' data-num='0'>
+        <text>{{actionSheet.items[0][actionSheet.numOne]}}</text>
+        <image src='/assets/fonts/down.svg'></image>
+      </view>
+      <view class='selectList' bindtap='showSheet' data-num='1'>
+        <text>{{actionSheet.items[1][actionSheet.numTwo]}}</text>
+        <image src='/assets/fonts/down.svg'></image>
+      </view>
+    </view>
+    <view>
+      <action-sheet hidden="{{actionSheet.hidden}}" bindchange="actionSheetChange">
+        <block wx:for-items="{{actionSheet.items[actionSheet.chooseNum]}}" wx:for-index="idx" wx:key="idx">
+          <action-sheet-item bindtap="selectList" data-id="{{actionSheet.chooseNum}}{{idx}}">{{item}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel>取消</action-sheet-cancel>
+      </action-sheet>
+    </view>
     <text class='title'>{{title}}</text>
     <view class='articleLists'>
       <view class='articleList' wx:for="{{Lists}}" wx:for-index="idx" data-index='{{idx}}' data-url='{{item.link}}' bindtap='tap'>
-        <view class='sub'><text class='id'>{{item.id}}</text>{{item.title}}</view>
-        <view class='info'><text class='role'>{{item.role}}</text> | <image src='/assets/fonts/peple.svg'></image>{{item.author}} |  <image src='/assets/fonts/phone.svg'></image>{{item.phone}}</view>
-        <view class='address'> <image src='/assets/fonts/address.svg'></image>{{item.address}}</view>
-        <view class='date'> <image src='/assets/fonts/date.svg'></image>{{item.date}}</view>
+        <view class='sub'>
+          <text class='id {{item.date? "" : "active"}}'>{{item.id}}</text>
+          <text class='text'>{{item.title}}</text>
+        </view>
+        <scroll-view scroll-x style="width: 100%" class='info'>
+          <view style='white-space:nowrap'>
+            <text class='role'>{{item.role}}</text> |
+            <image src='/assets/fonts/peple.svg'></image>{{item.author}} |
+            <image src='/assets/fonts/phone.svg'></image>{{item.phone}}
+          </view>
+        </scroll-view>
 
-        <view class='hide {{indexNum == idx ? "active" : "" }}'>123123</view>
+        <view class='date' wx:if="{{item.date}}">
+          <view>
+            <image src='/assets/fonts/date.svg'></image>注册时间: {{item.date}}</view>
+          <view>
+            <button class='sure submit' catchtap='sure'>确认</button>
+          </view>
+        </view>
+        <view class='notRegitser' wx:else>未注册</view>
+
+        <view class='hide {{indexNum == idx ? "active" : "" }}'>
+          <view class='address mark'>
+            <image src='/assets/fonts/tips.svg'></image>{{item.mark}}
+          </view>
+          <view class='address'>
+            <image src='/assets/fonts/address.svg'></image>{{item.address}}</view>
+
+        </view>
       </view>
     </view>
   </block>
