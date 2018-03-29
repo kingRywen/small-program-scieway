@@ -1,0 +1,7 @@
+<import src="/template/common/list.wxml" />
+<import src="/template/common/loading.wxml"/>
+
+<template is="getData" wx:if="{{loading}}" />
+<view wx:else>
+  <template is="list3" data="{{Lists: lists}}" />
+</view>

@@ -1,0 +1,3 @@
+@import '../../../styles/register.wxss';
+@import '/template/common/list.wxss';
+@import '/template/common/loading.wxss';

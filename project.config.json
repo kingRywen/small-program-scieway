@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -61,6 +61,18 @@
 					"name": "会议详情",
 					"pathName": "pages/register/conferenceDetail/conferenceDetail",
 					"query": "id=2&name=ICERP"
+				},
+				{
+					"id": -1,
+					"name": "作者查询",
+					"pathName": "pages/register/registerAuthorIndex/registerAuthorIndex",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "作者文章列表",
+					"pathName": "pages/register/articlesByPhone/articlesByPhone",
+					"query": "phone=123123"
 				}
 			]
 		}

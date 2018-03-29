@@ -116,8 +116,11 @@
   background: #a8a8a8
 }
 
-.articleList .info, .articleList .address, .articleList .mark, .articleList .date,.articleList .notRegitser {
+.articleList .address, .articleList .mark, .articleList .date,.articleList .notRegitser {
   margin-top: 18rpx;
+}
+.articleList .info {
+  margin-top: 8rpx;
 }
 .articleList .mark {
   border-top: 1px solid #f2f4f4;

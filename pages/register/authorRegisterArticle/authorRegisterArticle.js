@@ -1,39 +1,11 @@
-import {
-  request
-} from '../../../utils/util.js'
+// pages/register/authorRegisterArticle/authorRegisterArticle.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    input: ''
-  },
-
-  search: function () {
-    let input = this.data.input.trim()
-    if(!input && input !== 0) {
-      console.log('空2')
-      this.setData({
-        input: ''
-      })
-      wx.showToast({
-        title: '请输入号码',
-        mask: true,
-        icon: 'none'
-      })
-      return
-    }
-    wx.navigateTo({
-      url: `/pages/register/articlesByPhone/articlesByPhone?phone=${this.data.input}`,
-    })
-    
-  },
-
-  bindKeyInput: function (e) {
-    this.setData({
-      input: e.detail.value
-    })
+  
   },
 
   /**

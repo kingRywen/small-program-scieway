@@ -57,6 +57,9 @@ const request = (method, url, props, cb, headers) => {
     }, headers),
     success: res => {
       cb(res)
+    },
+    fail: err => {
+      console.log(JSON.stringify(err))
     }
   })
 }

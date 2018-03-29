@@ -7,6 +7,8 @@
     "pages/register/conferenceDetail/conferenceDetail",
     "pages/register/addConference/addConference",
     "pages/register/openAuthority/openAuthority",
+    "pages/register/articlesByPhone/articlesByPhone",
+    "pages/register/authorRegisterArticle/authorRegisterArticle",
     "pages/logs/logs"
   ],
   "window":{
