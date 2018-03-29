@@ -1,6 +1,6 @@
 <!--高德地图组件  -->
 <view class="map_container">
-  <view class='search_wrapper'>
+  <view wx:if="{{!confLocation}}" class='search_wrapper'>
     <picker mode="region" bindchange="bindRegionChange" style='flex:none' bindtap='getMap' value="{{region}}">
       <view>
         <image class='icon_loca' src='/assets/fonts/location.svg'></image>
@@ -21,7 +21,10 @@
     </scroll-view>
     <button class='cancel' bindtap='cancel'>取消</button>
   </view>
-  <map class="map {{showMap ? 'active' : ''}}" markers='{{markers}}' longitude="{{longitude}}" latitude="{{latitude}}" scale="18" show-location="true" bindmarkertap="makertap" controls="{{controls}}" bindregionchange="mapRegionchange"></map>
+  <view wx:else class="line">
+    <text wx:for="{{lines}}" wx:for-index="idx" class="{{ index == idx ? 'active' : ''}}" bindtap="showLine" data-type="{{item.type}}" data-i="{{idx}}">{{item.name}}</text>
+  </view>
+  <map class="map {{showMap ? 'active' : ''}}" markers='{{markers}}' longitude="{{longitude}}" polyline="{{polyline}}" latitude="{{latitude}}" show-location="true" bindmarkertap="makertap" controls="{{controls}}" bindregionchange="mapRegionchange" include-points="{{points}}"></map>
   <view class='info {{showInfo ? "active" : ""}}'>
     <text class='title'>{{textData.name}}</text>
     <text class='address'>{{textData.desc}}</text>

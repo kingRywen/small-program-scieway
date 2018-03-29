@@ -130,3 +130,18 @@
 .map.active {
   display: block
 }
+
+.line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+.line text {
+  line-height: 3;
+  flex: auto;
+  text-align: center
+}
+
+.line .active {
+  color: #148aea
+}

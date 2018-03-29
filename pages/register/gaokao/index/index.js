@@ -1,4 +1,4 @@
-// pages/register/authorRegisterArticle/authorRegisterArticle.js
+// pages/register/gaokao/index/index.js
 Page({
 
   /**

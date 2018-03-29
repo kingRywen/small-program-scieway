@@ -68,9 +68,9 @@
 
 <template name="list3">
   <block wx:if="{{Lists.length}}">
-    <text class='title'>{{'title'}}</text>
+    <text class='title'>{{title}}</text>
     <view class='articleLists'>
-      <view class='articleList' wx:for="{{Lists}}" bindtap='tap' wx:for-index="idx">
+      <view class='articleList' wx:for="{{Lists}}" wx:for-index="idx">
         <view class='sub'>
           <text class='text'>{{item.title}}</text>
         </view>
@@ -81,8 +81,8 @@
 
         <view class='date' wx:if="{{item.status == 1}}">
           <scroll-view scroll-x style="width: 100%" class='info'>
-            <view style='white-space:nowrap'>
-              <image src='/assets/fonts/address.svg'></image>地址: {{item.address}}
+            <view style='white-space:nowrap' catchtap='showMap' data-location='{{item.location}}'>
+              <image src='/assets/fonts/address.svg'></image>{{item.distance? item.distance :'正在定位'}} · {{item.address}}
             </view>
           </scroll-view>
           <view>

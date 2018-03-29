@@ -70,3 +70,18 @@ height:50rpx;
 z-index:2;
 
 }
+.map-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  z-index: 666;
+  transform: translate3d(0,0,0);
+  transition: all 0.25s ease-in;
+
+}
+
+.map-wrapper.active {
+  right: 0
+}

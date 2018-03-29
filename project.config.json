@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -69,10 +69,16 @@
 					"query": ""
 				},
 				{
+					"id": 6,
+					"name": "导航",
+					"pathName": "pages/register/conferenceNav/conferenceNav",
+					"query": "pos=112.547405,37.875321"
+				},
+				{
 					"id": -1,
-					"name": "作者文章列表",
-					"pathName": "pages/register/articlesByPhone/articlesByPhone",
-					"query": "phone=123123"
+					"name": "高考查询页",
+					"pathName": "pages/register/gaokao/index/index",
+					"query": "pos=112.547405,37.875321"
 				}
 			]
 		}

@@ -9,7 +9,21 @@ let myAmapFun = new amapFile.AMapWX({ key: config.godKey });
 Component({
   properties: {
     // 这里定义了innerText属性，属性值可以在组件使用时指定
-    
+    confLocation: {
+      type: String,
+      value: null,
+      observer: function (n, o) {
+        console.log(n, o)
+        this.getLine(n, 0)
+      }
+    },
+    lines: {
+      type: Array,
+      value: null,
+      observer: function (n, o) {
+        console.log(n, o)
+      }
+    }
   },
   data: {
     // 这里是一些组件内部数据
@@ -25,6 +39,7 @@ Component({
       name: '',
       desc: ''
     },
+    index: 0
   },
   attached: function() {
     this.getLocation()
@@ -35,6 +50,7 @@ Component({
       var myEventOption = {} // 触发事件的选项
       this.triggerEvent('cancel', myEventDetail, myEventOption)
       this.resetMap()
+      this.getLocation()
     },
 
     // 确认地址
@@ -62,11 +78,160 @@ Component({
           name: '',
           desc: ''
         },
+        distance: '',
+        cost: '',
+        polyline: [],
+        points: []
       })
-      this.getLocation()
+      
     },
 
-    getLocation: function() {
+    showLine: function (e) {
+      this.setData({
+        index: e.currentTarget.dataset.i
+      })
+      console.log(this.properties.confLocation,e.currentTarget.dataset.type);
+      this.getLine(this.properties.confLocation, e.currentTarget.dataset.type)
+    },
+
+    // 计算路线 0驾车，1步行，2 公交，3骑行
+    // pos 会议地点
+    getLine: function(pos, type) {
+      this.resetMap()
+      switch (type) {
+        case 0:
+          this.setCarLine(pos, type)
+          break;
+        case 1:
+          this.setWalkLine(pos, type)
+          break;
+        case 2:
+          
+          break;
+      
+        default:
+          break;
+      }
+    },
+
+    // 驾车
+    setCarLine: function (pos, type) {
+      var that = this
+      this.getLocation(data1 => {
+        myAmapFun.getDrivingRoute({
+          origin: data1[0].longitude + ',' + data1[0].latitude,
+          destination: pos,
+          // destination: "113.930532,22.513046",
+          success: function (data) {
+            console.log(data)
+            var points = [];
+            var markers = [{
+              latitude: data1[0].latitude,
+              longitude: data1[0].longitude,
+            },{
+              latitude: pos.split(',')[1],
+              longitude: pos.split(',')[0],
+            }]
+            if (data.paths && data.paths[0] && data.paths[0].steps) {
+              var steps = data.paths[0].steps;
+              for (var i = 0; i < steps.length; i++) {
+                var poLen = steps[i].polyline.split(';');
+                for (var j = 0; j < poLen.length; j++) {
+                  points.push({
+                    longitude: parseFloat(poLen[j].split(',')[0]),
+                    latitude: parseFloat(poLen[j].split(',')[1])
+                  })
+                }
+              }
+
+              let point = [data1[0].longitude + ',' + data1[0].latitude, pos]
+              console.log(point)
+              that.setData({
+                points: point,
+                markers: markers
+              })
+            }
+            that.setData({
+              
+              polyline: [{
+                points: points,
+                color: "#0091ff",
+                width: 6
+              }]
+            });
+
+          },
+          fail: function (info) {
+            console.log(info)
+          }
+        })
+      })
+    },
+
+    // 步行
+    setWalkLine: function (pos, type) {
+      console.log(pos);
+      var that = this
+      this.getLocation(data1 => {
+        myAmapFun.getWalkingRoute({
+          origin: data1[0].longitude + ',' + data1[0].latitude,
+          destination: pos,
+          // destination: "113.930532,22.513046",
+          success: function (data) {
+            console.log(data)
+            if (!data.paths) {
+              wx.showToast({
+                title: data.info
+              })
+            }
+            var markers = [{
+              latitude: data1[0].latitude,
+              longitude: data1[0].longitude,
+            }, {
+              latitude: pos.split(',')[1],
+              longitude: pos.split(',')[0],
+            }]
+            var points = [];
+            if (data.paths && data.paths[0] && data.paths[0].steps) {
+              var steps = data.paths[0].steps;
+              for (var i = 0; i < steps.length; i++) {
+                var poLen = steps[i].polyline.split(';');
+                for (var j = 0; j < poLen.length; j++) {
+                  points.push({
+                    longitude: parseFloat(poLen[j].split(',')[0]),
+                    latitude: parseFloat(poLen[j].split(',')[1])
+                  })
+                }
+              }
+              
+              let point = [data1[0].longitude + ',' + data1[0].latitude, pos]
+              console.log(point)
+              that.setData({
+                points: point,
+                markers: markers
+              })
+            }
+            that.setData({
+              
+              polyline: [{
+                points: points,
+                color: "#0091ff",
+                width: 6
+              }]
+            });
+
+          },
+          fail: function (info) {
+            console.log(info)
+          }
+        })
+      })
+    },
+
+    
+
+
+    getLocation: function(fn) {
       // 调用高德地图APi
       var that = this
       console.log(this)
@@ -76,6 +241,9 @@ Component({
         success: function (data) {
           //成功回调
           console.log(data)
+          if(fn){
+            return fn(data)
+          }
 
           if (data && data.length) {
             that.setData({

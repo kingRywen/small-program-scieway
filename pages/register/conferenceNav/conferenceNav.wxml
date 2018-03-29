@@ -1,0 +1,3 @@
+<view class='map-wrapper active'>
+  <map-wrapper conf-location="{{confLocation}}" lines="{{lines}}" bindcancel="closeMap" bindsetDesc="getaddress"></map-wrapper>
+</view>

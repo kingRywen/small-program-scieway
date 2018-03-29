@@ -8,7 +8,8 @@
     "pages/register/addConference/addConference",
     "pages/register/openAuthority/openAuthority",
     "pages/register/articlesByPhone/articlesByPhone",
-    "pages/register/authorRegisterArticle/authorRegisterArticle",
+    "pages/register/conferenceNav/conferenceNav",
+    "pages/register/gaokao/index/index",
     "pages/logs/logs"
   ],
   "window":{

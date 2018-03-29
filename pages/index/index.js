@@ -33,7 +33,7 @@ Page({
       {
         img: '/assets/fonts/icon3.svg',
         name: '高考查询',
-        navUrl: '/pages/logs/logs'
+        navUrl: "/pages/register/gaokao/index/index"
       },
       {
         img: '/assets/fonts/icon4.svg',
