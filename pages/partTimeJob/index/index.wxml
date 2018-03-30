@@ -1,0 +1,81 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">原创作者招募 | WE WANT YOU</view>
+      <view class="weui-article__section">
+        <view class="weui-article__section">
+          <view class="weui-article__title">关于学术Global</view>
+        </view>
+        <view class="weui-article__section">
+
+          <view class="weui-article__p">
+            学术Global致力于做国际化的教育传媒分享的平台。
+          </view>
+          <view class="weui-article__p">
+            用户真实活跃，观点匠心独运，故事丰盈有趣，专注于现代人的阅读需求。
+          </view>
+          <view class="weui-article__p">
+            每日为读者推送优质文章，精选话题，科研速递，现代教育最新资讯集合。
+          </view>
+
+        </view>
+        <view class="weui-article__section">
+          <view class="weui-article__h3">
+            <text class='bold'>长期撰稿人</text> ( 稿费：1000-2000/篇 )</view>
+          <view class="weui-article__p">
+            1.原创首发，稿件一经录用，版权属于学术Global（署名为作者本人）,禁止一稿多发，严禁抄袭
+          </view>
+          <view class="weui-article__p">
+            2. 硕士或硕士以上学历，中文系、新闻系、心理学、哲学等专业优先
+          </view>
+          <view class="weui-article__p">
+            3. 题目新颖独特，观点匠心独运，故事丰盈有趣，内容易于传播
+          </view>
+          <view class="weui-article__p">
+            4. 应聘时需提供个人原创文字作品，个人简介和联系方式
+          </view>
+          <view class="weui-article__p">
+            5. 主题可涉及：工作、生活、教育、校园故事、人物、新闻评论、电视及影视评论等
+          </view>
+          <view class="weui-article__p">
+            6. 需定期供稿，每周1-2篇
+          </view>
+          <view class="weui-article__p">
+            7. 工作地点不限
+          </view>
+        </view>
+      </view>
+      <view class="weui-article__section">
+
+        <view class="weui-article__section">
+          <view class="weui-article__h3">
+            <text class='bold'>自由撰稿人</text> ( 稿费：300-2000元/篇 )</view>
+          <view class="weui-article__p">
+            1.原创首发，稿件一经录用，版权属于学术Global（署名为作者本人）,禁止一稿多发，严禁抄袭
+          </view>
+          <view class="weui-article__p">
+            2.观点匠心独运，题目新颖独特，故事丰盈有趣，内容易于传播
+          </view>
+          <view class="weui-article__p">
+            3.主题可涉及：校园故事、教育教学、社会生活、工作、学术、人物、影评等
+          </view>
+          <view class="weui-article__p">
+            4.字数不低于1000字，每篇文章需要附作者简介
+          </view>
+          <view class="weui-article__p">
+            5.工作地点不限
+          </view>
+        </view>
+      </view>
+      <view class="img">
+      <view class="hr">
+          
+        </view>
+        <text>投稿邮箱：3185804370@qq.com</text>
+        <text>工作人员微信：Aimer999999</text>
+        
+        <image src='/assets/images/1.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

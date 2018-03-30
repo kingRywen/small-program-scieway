@@ -1,0 +1,52 @@
+@import '/styles/weui.wxss';
+page,
+.page,
+.page__bd {
+  height: 100%;
+}
+
+.weui-navbar {
+  background: #fff
+}
+
+.page__bd {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+  padding-top: 30rpx;
+  text-align: center;
+}
+
+#panel {
+  background: #fff;
+}
+
+ .flex-column view {
+  
+  border-bottom: 1rpx solid #ddd;
+}
+#panel text{
+  border-right: 1rpx solid #ddd;
+  line-height: 3
+}
+
+.flex-row {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  /* height:80rpx; */
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.flex-cell {
+  flex: 1;
+}

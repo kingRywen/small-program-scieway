@@ -1,3 +1,7 @@
 <view class='gaokao_wrapper'>
-<input value='名字'></input>
+<text>高考志愿预估</text>
+<input value='文理分科'></input>
+<input value='地区'></input>
+<input value='成绩'></input>
+<button>查询</button>
 </view>

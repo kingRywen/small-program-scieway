@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
@@ -75,10 +75,22 @@
 					"query": "pos=112.547405,37.875321"
 				},
 				{
-					"id": -1,
+					"id": 7,
 					"name": "高考查询页",
-					"pathName": "pages/register/gaokao/index/index",
-					"query": "pos=112.547405,37.875321"
+					"pathName": "pages/gaokao/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "高考结果页",
+					"pathName": "pages/gaokao/result/result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "招聘",
+					"pathName": "pages/partTimeJob/index/index",
+					"query": ""
 				}
 			]
 		}

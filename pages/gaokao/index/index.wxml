@@ -1,0 +1,34 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="gaokao_wrapper {{animation.inputWrapperController? 'active': ''}}">
+    <view class="input_wrapper">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" data-name="index">
+        <view class="picker">
+          <input placeholder-class='holder' name="type" disabled='true' placeholder="请选择学科" bindtap="choose" value='{{array[index]}}'></input>
+        </view>
+      </picker>
+      <picker bindchange="bindPickerChange" value="{{indexR}}" range="{{region}}" data-name="indexR">
+        <view class="picker">
+          <input placeholder-class='holder' name="province" disabled='true' placeholder="请选择省份" bindtap="choose" value='{{region[indexR]}}'></input>
+        </view>
+      </picker>
+      
+      <input placeholder-class='holder' name="score" placeholder="成绩" value=''></input>
+    </view>
+
+    
+    <button formType="submit" bindtap="tap">查询</button>
+  </view>
+  <view class="animation {{!animation.inputWrapperController? 'active': ''}}">
+      <view class="circle1">
+        
+      </view>
+      <view class="circle2">
+        <view class="line1"></view>
+      </view>
+      <view class="circle3"></view>
+      <view class="circle4"></view>
+      
+  </view>
+  
+</form>
+<button class="cancel  {{animation.inputWrapperController? 'active': ''}}" formType="submit" bindtap="cancel">取消查询</button>

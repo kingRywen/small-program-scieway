@@ -101,3 +101,39 @@
     <text>暂无任何文章</text>
   </view>
 </template>
+
+<template name="list4">
+  <block wx:if="{{Lists.length}}">
+    <text class='title'>{{title}}</text>
+    <view class='articleLists'>
+      <view class='articleList' wx:for="{{Lists}}" wx:for-index="idx">
+        <view class='sub'>
+          <text class='text'>{{item.title}}</text>
+        </view>
+
+        <view class='info'>
+          <text>会议：{{item.shortname}}</text>
+        </view>
+
+        <view class='date' wx:if="{{item.status == 1}}">
+          <scroll-view scroll-x style="width: 100%" class='info'>
+            <view style='white-space:nowrap' catchtap='showMap' data-location='{{item.location}}'>
+              <image src='/assets/fonts/address.svg'></image>{{item.distance? item.distance :'正在定位'}} · {{item.address}}
+            </view>
+          </scroll-view>
+          <view>
+          </view>
+        </view>
+        <view class='notRegitser date' wx:else>
+        <text>未注册</text>
+        <button class='sure submit' catchtap='sure' data-id='{{item.id}}' data-index="{{idx}}" data-title='{{item.title}}'>注册</button>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class='none' wx:else>
+    <image src='/assets/fonts/none.svg'></image>
+    <text>暂无任何文章</text>
+  </view>
+</template>

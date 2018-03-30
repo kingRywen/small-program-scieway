@@ -28,12 +28,12 @@ Page({
       {
         img: '/assets/fonts/icon2.svg',
         name: '兼职投稿',
-        navUrl: '/pages/logs/logs'
+        navUrl: '/pages/partTimeJob/index/index'
       },
       {
         img: '/assets/fonts/icon3.svg',
         name: '高考查询',
-        navUrl: "/pages/register/gaokao/index/index"
+        navUrl: "/pages/gaokao/index/index"
       },
       {
         img: '/assets/fonts/icon4.svg',

@@ -9,7 +9,9 @@
     "pages/register/openAuthority/openAuthority",
     "pages/register/articlesByPhone/articlesByPhone",
     "pages/register/conferenceNav/conferenceNav",
-    "pages/register/gaokao/index/index",
+    "pages/gaokao/index/index",
+    "pages/gaokao/result/result",
+    "pages/partTimeJob/index/index",
     "pages/logs/logs"
   ],
   "window":{

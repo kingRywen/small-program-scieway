@@ -1,6 +1,225 @@
 page,body {
-  background: #0072f9
+  background: #396afc;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .gaokao_wrapper {
+  transform: translate3d(0, 0, 0);
+  transition: all 0.25s ease-in-out;
+  padding: 0 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+.gaokao_wrapper form {
+  width: 100%;
+}
+.gaokao_wrapper input {
+  width: 100%;
+  margin: 80rpx 0;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 34rpx;
+  padding: 12rpx 0
+}
+.gaokao_wrapper button, .cancel {
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 100rpx;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 60px;
+  color: #fff;
+  line-height: 2.8;
+
+}
+
+.cancel {
+  transform: translateY(1000%) translate3d(0,0,0);
+  position: fixed;
+  width: 84%;
+  left: 8%;
+  transition: all 0.25s ease-in-out
+}
+.cancel.active {
+  transform: translateY(0) translate3d(0, 0, 0);
+  transition: all 0.25s ease-in-out
+}
+.gaokao_wrapper button:active {
+  background: rgba(255, 255, 255, 0.4);
+  color: #fff
+}
+.gaokao_wrapper button::before {
+  border: none
+}
+.holder {
+  color: #fff;
+}
+.gaokao_wrapper .input_wrapper {
+  width: 100%;
+  margin-top: 80rpx;
   
+
+}
+
+.gaokao_wrapper.active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.25s ease-in-out;
+}
+
+.animation {
+  z-index: -1;
+  position: absolute;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  top: -10%;
+  align-items: center;
+  justify-content: center;
+}
+.animation.active {
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+  z-index: -1;
+}
+
+.animation .circle1 {
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  animation: rotate1 2s ease-in-out infinite;
+}
+
+.animation .circle2 {
+  position: absolute;
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+  border: 0;
+  animation: rotate2 2s ease-in-out infinite;
+}
+.animation .line1 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: rotate3 2s ease-in-out infinite;
+}
+.animation .line1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg)
+}
+.animation .circle3 {
+  position: absolute;
+  width: 320rpx;
+  height: 320rpx;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: rotate4 6s ease-in-out infinite;
+}
+.animation .circle4 {
+  position: absolute;
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: rotate5 3s ease-in-out infinite;
+}
+
+@keyframes rotate1 {
+  0% {
+    border-width: 4px;
+    width: 400rpx;
+    height: 400rpx;
+  }
+  60% {
+    border-width: 6px;
+    width: 460rpx;
+    height: 460rpx;
+  }
+  100% {
+    border-width: 4px;
+    width: 400rpx;
+    height: 400rpx;
+  }
+}
+@keyframes rotate2 {
+  0% {
+    width: 400rpx;
+    height: 400rpx;
+  }
+  60% {
+    width: 460rpx;
+    height: 460rpx;
+  }
+  100% {
+    width: 400rpx;
+    height: 400rpx;
+  }
+}
+@keyframes rotate3 {
+  0% {
+    transform: rotate(0deg)
+  }
+  50% {
+    transform: rotate(360deg)
+  }
+  100% {
+    transform: rotate(0deg)
+  }
+}
+@keyframes rotate4 {
+  0% {
+    box-shadow: none;
+    width: 400rpx;
+    height: 400rpx;
+  }
+
+  60% {
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.4);
+    width: 0rpx;
+    height: 0rpx;
+    opacity: 1;
+  }
+
+  100% {
+    box-shadow: none;
+    width: 400rpx;
+    height: 400rpx;
+  }
+}
+@keyframes rotate5 {
+  0% {
+    box-shadow: none;
+    width: 400rpx;
+    height: 400rpx;
+  }
+
+  60% {
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.4);
+    width: 0rpx;
+    height: 0rpx;
+    opacity: 1;
+  }
+
+  100% {
+    box-shadow: none;
+    width: 400rpx;
+    height: 400rpx;
+  }
 }

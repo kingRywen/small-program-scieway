@@ -1,0 +1,36 @@
+@import '/styles/weui.wxss';
+
+page {
+  background-color: #FFFFFF;
+}
+
+image {
+  margin: 4px 0;
+}
+.weui-article__title {
+  font-weight: bold;
+}
+.weui-article__h3 .bold {
+  font-weight: bold;
+  font-size:42rpx;
+  color: palevioletred
+}
+.img {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.img image {
+  margin-top: 40rpx;
+  width: 300rpx;
+  height: 300rpx;
+}
+.img .hr {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 40rpx;
+  border-bottom: 1px dotted #ddd
+}
+.img text {
+  margin-bottom: 40rpx
+}
